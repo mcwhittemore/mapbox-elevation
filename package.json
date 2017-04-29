@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "@mapbox/tilebelt": "^1.0.1",
+    "get-pixels": "^3.3.0"
+  },
+  "name": "mapbox-elevation",
+  "version": "1.0.0",
+  "description": "qucikly get the elevation of any lng,lat in the world",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "keywords": [
+    "mapbox",
+    "elevation",
+    "terrain",
+    "height",
+    "depth"
+  ],
+  "author": "Matthew Chase Whittemore",
+  "license": "ISC"
+}
