@@ -20,3 +20,9 @@ getElevation([86.925313, 27.988730], function(err, elevation) {
   console.log('elevation at the summit of mt everest', elevation);
 });
 ```
+
+## API
+
+**getElevation(point, callback)**
+
+The point must be a [longitude, latitude] array and the callback follows the standard (err, value) convension of node.
