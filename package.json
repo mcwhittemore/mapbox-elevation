@@ -1,7 +1,9 @@
 {
   "dependencies": {
     "@mapbox/tilebelt": "^1.0.1",
-    "get-pixels": "^3.3.0"
+    "@turf/bbox": "^4.1.0",
+    "get-pixels": "^3.3.0",
+    "tape": "^4.6.3"
   },
   "name": "mapbox-elevation",
   "version": "1.0.0",
@@ -12,7 +14,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "node test/test.js"
+    "test": "tape test/*.test.js"
   },
   "keywords": [
     "mapbox",
