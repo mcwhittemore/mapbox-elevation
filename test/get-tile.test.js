@@ -4,7 +4,7 @@ var test = require('tape');
 test('[unit] getTiles turns point into a zoom 20 tile', function(assert) {
   var tiles = getTiles([0, 0]);
   assert.equals(1, tiles.length, 'points make one tile');
-  assert.equals(20, tiles[0][2], 'points are at zoom 20');
+  assert.equals(20, tiles[0].tile[2], 'points are at zoom 20');
 
   assert.end();
 });
@@ -22,8 +22,8 @@ test('[unit] getTiles turns a really short line into a zoom 20 tile', function(a
   ];
 
   var tiles = getTiles(line);
-  assert.equals(1, tiles.length, 'should be one tile');
-  assert.equals(20, tiles[0][2], 'at zoom 20');
+  assert.equals(tiles.length, 1, 'should be one tile');
+  assert.equals(tiles[0].tile[2], 20, 'at zoom 20');
   assert.end();
 });
 
@@ -40,9 +40,10 @@ test('[unit] getTiles turns a very short line that crosses the meridian into two
   ];
 
   var tiles = getTiles(line);
-  assert.equals(2, tiles.length, 'should be two tiles');
-  assert.equals(20, tiles[0][2], 'at zoom 20');
-  assert.equals(20, tiles[1][2], 'at zoom 20');
+  assert.equals(tiles.length, 2, 'should be two tiles');
+  for (var i=0; i<tiles.length; i++) {
+    assert.equals(tiles[i].tile[2], 20, 'at zoom 20');
+  }
   assert.end();
 
 });
